@@ -42,7 +42,7 @@ Gas Limit Testing: Test the contract’s behavior under high gas usage scenarios
 
 
 ### Start by Importing
-1. Import the essential utilities for writing and executing Solidity smart contract tests within the Hardhat environment:
+**1. Import the essential utilities for writing and executing Solidity smart contract tests within the Hardhat environment:**
 
   **expect** from Chai is used for assertions in tests.<br/>
   **toHex** and **hexToString** from **viem** convert data to and from hexadecimal format.<br/>
@@ -59,7 +59,7 @@ Gas Limit Testing: Test the contract’s behavior under high gas usage scenarios
   ```
   **PROPOSALS** is an array of proposal strings used for contract input data.
 
-2. Set up the testing environment
+**2. Set up the testing environment**
 
    The **deployContract** function sets up the testing environment by deploying the **Ballot** smart contract to the blockchain.
    It initializes a public client for blockchain interactions and retrieves two wallet clients:
@@ -81,7 +81,7 @@ async function deployContract() {
 }
 ```
 
-3. Prepare a starting structure for your tests
+**3. Prepare a starting structure for your tests**
 
 ### Starting structure for tests
 
@@ -210,5 +210,21 @@ describe("Ballot", async () => {
 });
 ```
 
+**4. Complete a first test scenario**
+``` typescript
+      const { ballotContract } = await loadFixture(deployContract);
+```
+Loads the contract deployment fixture, setting up a fresh instance of the Ballot contract for testing.
+
+```typescript
+      for (let index = 0; index < PROPOSALS.length; index++) {
+        const proposal = await ballotContract.read.proposals([BigInt(index)]);
+        expect(hexToString(proposal[0], { size: 32 })).to.eq(PROPOSALS[index]);
+      }
+```
+-Iterates over the list of proposals.<br/>
+-Retrieves each proposal from the contract using the read.proposals method, which takes the index of the proposal as input.<br/>
+-Converts the retrieved proposal data from hexadecimal to a string using hexToString.<br/>
+-Asserts that the converted string matches the expected proposal name from the PROPOSALS array.<br/>
 
 
