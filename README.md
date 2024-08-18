@@ -10,6 +10,10 @@ and handle time-dependent logic properly. Additionally, employ assertive testing
 check for reverts, and utilize mock contracts to simulate interactions, 
 ensuring your contract is thoroughly validated before deployment.
 
+### Diagram of Ballot.sol
+![Screenshot_2024-08-16_at_4](https://github.com/user-attachments/assets/e35b6c06-3d8e-420a-b58e-82f7945f8e09)
+
+
 ### Identify key test scenarios
 1. Deployment Tests<br />
 Check Initial Setup: Verify that the contract is deployed with the correct number of proposals, and each proposal's name is correctly stored.<br />
