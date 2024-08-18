@@ -68,5 +68,18 @@ Gas Limit Testing: Test the contract’s behavior under high gas usage scenarios
    deploys the contract with these proposals, and returns an object containing the public client,
    deployer account, additional account, and the deployed contract instance for use in tests.
 
+* Deploying contract in the Fixture function
+
+```typescript
+async function deployContract() {
+  const publicClient = await viem.getPublicClient();
+  const [deployer, otherAccount] = await viem.getWalletClients();
+  const ballotContract = await viem.deployContract("Ballot", [
+    PROPOSALS.map((prop) => toHex(prop, { size: 32 })),
+  ]);
+  return { publicClient, deployer, otherAccount, ballotContract };
+}
+```
+
 
 
