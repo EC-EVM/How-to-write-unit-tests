@@ -14,11 +14,12 @@ ensuring your contract is thoroughly validated before deployment.
 <img src="https://github.com/user-attachments/assets/e35b6c06-3d8e-420a-b58e-82f7945f8e09" width="500" >
 
 ## Steps
-- [✔] Identify key test scenarios
-- [✔] Import the essential utilities
-- [✔] Set up the testing environment
-- [ ] Prepare a starting structure for your tests
+- [x] Identify key test scenarios
+- [x] Import the essential utilities
+- [x] Set up the testing environment
+- [x] Prepare a starting structure for your tests
 - [x] Complete a first test scenario
+- [ ] Add other test scenarios
 
 ### Identify key test scenarios
 1. Deployment Tests<br />
