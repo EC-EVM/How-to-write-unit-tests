@@ -227,4 +227,13 @@ Loads the contract deployment fixture, setting up a fresh instance of the Ballot
 -Converts the retrieved proposal data from hexadecimal to a string using hexToString.<br/>
 -Asserts that the converted string matches the expected proposal name from the PROPOSALS array.<br/>
 
-
+```typescript
+it("has the provided proposals", async () => {
+			const { ballotContract } = await loadFixture(deployContract);
+			// Read that it has the proposals
+			for (let i = 0; i < PROPOSALS.length; i++) {
+				const proposal = await ballotContract.read.proposals([BigInt(i)]);
+				expect(hexToString(proposal[0], { size: 32 })).to.eq(PROPOSALS[i]);
+			}
+		});
+```
