@@ -13,7 +13,7 @@ ensuring your contract is thoroughly validated before deployment.
 ### Diagram of Ballot.sol
 ![Screenshot_2024-08-16_at_4](https://github.com/user-attachments/assets/e35b6c06-3d8e-420a-b58e-82f7945f8e09 | width=300) 
 
-![](https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png | width=100)
+<img src="https://github.com/user-attachments/assets/e35b6c06-3d8e-420a-b58e-82f7945f8e09" width="300" >
 
 
 ### Identify key test scenarios
