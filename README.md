@@ -40,3 +40,23 @@ All Votes Delegated: Test scenarios where all voters delegate their votes to ens
 Reentrancy Attack Prevention: Ensure the contract is safe against reentrancy attacks during voting or delegation.<br />
 Gas Limit Testing: Test the contract’s behavior under high gas usage scenarios, especially with complex delegation chains.<br />
 
+
+### Start by Importing
+
+1. Import the essential utilities for writing and executing Solidity smart contract tests within the Hardhat environment:
+
+**expect** from Chai is used for assertions in tests.
+**toHex** and **hexToString** from **viem** convert data to and from hexadecimal format.
+**viem** provides tools for interacting with contracts in Hardhat.
+**loadFixture** helps in efficiently setting up and reusing test scenarios.
+
+```bash
+import { expect } from "chai";
+import { toHex, hexToString } from "viem";
+import { viem } from "hardhat";
+import { loadFixture } from "@nomicfoundation/hardhat-network-helpers";
+
+const PROPOSALS = ["ramen", "pizza", "burger"];
+```
+PROPOSALS is an array of proposal strings used for contract input data.
+
