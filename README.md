@@ -44,18 +44,38 @@ Gas Limit Testing: Test the contract’s behavior under high gas usage scenarios
 ### Start by Importing
 1. Import the essential utilities for writing and executing Solidity smart contract tests within the Hardhat environment:
 
-**expect** from Chai is used for assertions in tests.<br/>
-**toHex** and **hexToString** from **viem** convert data to and from hexadecimal format.<br/>
-**viem** provides tools for interacting with contracts in Hardhat.<br/>
-**loadFixture** helps in efficiently setting up and reusing test scenarios.<br/>
+  **expect** from Chai is used for assertions in tests.<br/>
+  **toHex** and **hexToString** from **viem** convert data to and from hexadecimal format.<br/>
+  **viem** provides tools for interacting with contracts in Hardhat.<br/>
+  **loadFixture** helps in efficiently setting up and reusing test scenarios.<br/>
 
-```bash
-import { expect } from "chai";
-import { toHex, hexToString } from "viem";
-import { viem } from "hardhat";
-import { loadFixture } from "@nomicfoundation/hardhat-network-helpers";
+  ```bash
+  import { expect } from "chai";
+  import { toHex, hexToString } from "viem";
+  import { viem } from "hardhat";
+  import { loadFixture } from "@nomicfoundation/hardhat-network-helpers";
 
-const PROPOSALS = ["ramen", "pizza", "burger"];
-```
-PROPOSALS is an array of proposal strings used for contract input data.
+  const PROPOSALS = ["ramen", "pizza", "burger"];
+  ```
+  **PROPOSALS** is an array of proposal strings used for contract input data.
+
+2. Set up the testing environment
+
+   The **deployContract** function sets up the testing environment by deploying the **Ballot** smart contract to the blockchain.
+   It initializes a public client for blockchain interactions and retrieves two wallet clients:
+   one for deploying the contract and another for additional interactions.
+   The function converts proposal data into the required hexadecimal format,
+   deploys the contract with these proposals, and returns an object containing the public client,
+   deployer account, additional account, and the deployed contract instance for use in tests.
+
+   ```bash
+  async function deployContract() {
+  const publicClient = await viem.getPublicClient();
+  const [deployer, otherAccount] = await viem.getWalletClients();
+  const ballotContract = await viem.deployContract("Ballot", [
+    PROPOSALS.map((prop) => toHex(prop, { size: 32 })),
+  ]);
+  return { publicClient, deployer, otherAccount, ballotContract };
+}
+  ```
 
