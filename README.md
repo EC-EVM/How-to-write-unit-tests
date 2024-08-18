@@ -42,13 +42,12 @@ Gas Limit Testing: Test the contract’s behavior under high gas usage scenarios
 
 
 ### Start by Importing
-
 1. Import the essential utilities for writing and executing Solidity smart contract tests within the Hardhat environment:
 
-**expect** from Chai is used for assertions in tests.
-**toHex** and **hexToString** from **viem** convert data to and from hexadecimal format.
-**viem** provides tools for interacting with contracts in Hardhat.
-**loadFixture** helps in efficiently setting up and reusing test scenarios.
+**expect** from Chai is used for assertions in tests.<br/>
+**toHex** and **hexToString** from **viem** convert data to and from hexadecimal format.<br/>
+**viem** provides tools for interacting with contracts in Hardhat.<br/>
+**loadFixture** helps in efficiently setting up and reusing test scenarios.<br/>
 
 ```bash
 import { expect } from "chai";
