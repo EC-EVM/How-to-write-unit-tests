@@ -11,9 +11,7 @@ check for reverts, and utilize mock contracts to simulate interactions,
 ensuring your contract is thoroughly validated before deployment.
 
 ### Diagram of Ballot.sol
-![Screenshot_2024-08-16_at_4](https://github.com/user-attachments/assets/e35b6c06-3d8e-420a-b58e-82f7945f8e09 | width=300) 
-
-<img src="https://github.com/user-attachments/assets/e35b6c06-3d8e-420a-b58e-82f7945f8e09" width="300" >
+<img src="https://github.com/user-attachments/assets/e35b6c06-3d8e-420a-b58e-82f7945f8e09" width="500" >
 
 
 ### Identify key test scenarios
