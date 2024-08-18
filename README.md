@@ -1,4 +1,4 @@
-# How to write unit tests for solidity smart contracts
+# How to write unit tests for solidity smart contracts (WIP)
 
 ### Tips for creating tests
 
@@ -13,6 +13,12 @@ ensuring your contract is thoroughly validated before deployment.
 ### Diagram of Ballot.sol
 <img src="https://github.com/user-attachments/assets/e35b6c06-3d8e-420a-b58e-82f7945f8e09" width="500" >
 
+## Steps
+- [✔] Identify key test scenarios
+- [✔] Import the essential utilities
+- [✔] Set up the testing environment
+- [ ] Prepare a starting structure for your tests
+- [x] Complete a first test scenario
 
 ### Identify key test scenarios
 1. Deployment Tests<br />
